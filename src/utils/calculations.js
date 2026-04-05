@@ -1,4 +1,4 @@
-import { format, startOfMonth, endOfMonth, subMonths, isWithinInterval, parseISO } from 'date-fns';
+import {  startOfMonth, endOfMonth, subMonths, isWithinInterval, parseISO } from 'date-fns';
 
 export const calculateTotals = (transactions) => {
   const income = transactions
