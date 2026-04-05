@@ -1,5 +1,5 @@
 
-import { format, subDays, subMonths } from 'date-fns';
+import { format, subDays } from 'date-fns';
 
 const categories = [
   { name: 'Food & Dining', type: 'expense' },
