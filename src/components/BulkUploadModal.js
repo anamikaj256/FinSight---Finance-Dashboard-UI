@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { Upload, FileArrowUp, X, CheckCircle, WarningCircle } from '@phosphor-icons/react';
+import { Upload, FileArrowUp, CheckCircle, WarningCircle } from '@phosphor-icons/react';
 import {
   Dialog,
   DialogContent,
