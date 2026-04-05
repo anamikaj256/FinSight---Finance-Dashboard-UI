@@ -1,70 +1,475 @@
-# Getting Started with Create React App
+# FinSight - Finance Dashboard UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautiful, feature-rich finance dashboard built with React, featuring glassmorphism design, real-time data visualization, comprehensive transaction management, and smart spending alerts.
 
-## Available Scripts
+✨ Features
 
-In the project directory, you can run:
+ 📊 Dashboard Overview
+-Summary Cards: Real-time display of Total Balance, Income, and Expenses with gradient icons
+-Balance Trend Chart: Interactive area chart showing balance progression over 30 days
+-Spending Breakdown: Colorful doughnut chart visualizing expense categories
+-Insights Panel: Smart insights including highest spending category and monthly comparisons
+-Spending Alerts Banner: Visual notifications when spending exceeds configured limits
 
-### `npm start`
+ 💳 Transaction Management
+- 120+ Mock Transactions: Auto-generated rich dataset with realistic data
+- Serial Numbers : Unique identifiers (#1000+) for each transaction
+- Full CRUD Operations: Add, Edit, and Delete transactions (Admin only)
+- Enhanced Tooltips: Hover over amounts to see detailed transaction information with premium card design
+- Transaction Notes: Add comments and notes to transactions
+- Receipt Attachments: Upload and attach receipts/documents (images & PDFs)
+- Advanced Filtering: 
+  - Search by description, category, or serial number
+  - Filter by category and type (income/expense)
+  - Custom date range picker
+  - Smart sorting (date/amount, ascending/descending)
+  - Clear all filters with one click
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+📤 Bulk Operations
+- CSV Import: Upload multiple transactions from CSV files
+- Bank Statement Import: Smart parser for bank statement format (Date, Description, Debit, Credit)
+- Auto-Categorization: Intelligent category assignment based on transaction description
+- Validation: Real-time error and warning detection before import
+- Preview: See first 5 transactions before importing
+- Download Template: Get a sample CSV template for easy formatting
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🔔 Spending Alerts
+- Smart Notifications: Three-level alert system (On Track, Warning, Exceeded)
+- Configurable Thresholds: Set custom spending limits
+- Flexible Periods: Daily, Weekly, or Monthly tracking
+- Visual Progress Bars: See spending percentage with color coding
+- Quick Presets: $500 daily, $2K weekly, $5K monthly
+- Real-time Tracking: Instant updates as you add transactions
+- Bell Notification: Header icon with pulsing dot when threshold met
 
-### `npm test`
+🎨 Design & UX
+- Glassmorphism UI: Frosted glass panels with backdrop blur effects
+- Dual Theme Support: Beautiful light and dark modes with mesh gradient backgrounds
+- Entrance Animations: Staggered fade-in and slide-up animations for all panels
+- Hover Effects: Scale, rotate, and color transitions on interactive elements
+- Fully Responsive: Optimized for mobile, tablet, and desktop viewports
+- Premium Tooltips: Enhanced transaction details with gradient headers and icons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 🔐 Role-Based Access Control
+- Admin Role: Full access to add, edit, delete transactions, and bulk upload
+- Viewer Role: Read-only access to view and export data
+- Easy Role Switching: Toggle between roles via dropdown in header
 
-### `npm run build`
+ 💾 Data Management
+- LocalStorage Persistence: All transactions, theme, role, and alert settings saved locally
+- Export Functionality: Download transactions as CSV or JSON files (filtered data)
+- Import from CSV: Bulk upload with validation and preview
+- Mock Data Generator: Auto-generates 120 realistic transactions on first load
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 🚀 Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend
+- React 19.0.0 - UI library
+- React Router DOM 7.5.1 - Client-side routing
+- Tailwind CSS 3.4.17 - Utility-first CSS framework
+- Shadcn UI - Accessible component library
+- Chart.js 4.5.1 - Data visualization
+- react-chartjs-2 5.3.1 - React wrapper for Chart.js
+- Phosphor Icons - Modern icon library
+- date-fns 4.1.0 - Date manipulation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+📋 Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Before you begin, ensure you have the following installed:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js (v16 or higher) - [Download here](https://nodejs.org/)
+- npm (comes with Node.js) or **Yarn** (recommended)
+- Git - [Download here](https://git-scm.com/)
+- VS Code (recommended) - [Download here](https://code.visualstudio.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Check if installed:
+```bash
+node --version    # Should show v16.x.x or higher
+npm --version     # Should show 8.x.x or higher
+yarn --version    # Should show 1.22.x or higher (if using yarn)
+git --version     # Should show git version 2.x.x or higher
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Installation & Setup
 
-## Learn More
+### Option 1: Clone This Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Clone the repository
+git clone <repository-url>
+cd finsight-dashboard
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Install dependencies
+cd frontend
+yarn install
+# or
+npm install
 
-### Code Splitting
+# Start the development server
+yarn start
+# or
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The app will open at `http://localhost:3000`
 
-### Analyzing the Bundle Size
+### Option 2: Create From Scratch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Step 1: Install Node.js and Yarn
+```bash
+# Install Yarn globally (if not already installed)
+npm install -g yarn
+```
 
-### Making a Progressive Web App
+#### Step 2: Create React App
+```bash
+# Create a new React app
+npx create-react-app finsight-dashboard
+cd finsight-dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Install required dependencies
+yarn add react-router-dom@7.5.1
+yarn add @phosphor-icons/react
+yarn add react-chartjs-2 chart.js
+yarn add date-fns
+yarn add clsx tailwind-merge
+yarn add class-variance-authority
 
-### Advanced Configuration
+# Install Tailwind CSS
+yarn add -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Step 3: Install Shadcn UI Components
+```bash
+# Install Radix UI dependencies
+yarn add @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-label @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip
 
-### Deployment
+# Additional UI dependencies
+yarn add sonner
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Install Tailwind animate plugin
+yarn add -D tailwindcss-animate
+```
 
-### `npm run build` fails to minify
+ 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+finsight-dashboard/
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── ui/                      # Shadcn UI components
+│   │   │   ├── Header.js                # App header with navigation
+│   │   │   ├── SummaryCards.js          # Financial summary cards
+│   │   │   ├── BalanceTrendChart.js     # Line chart
+│   │   │   ├── SpendingBreakdown.js     # Doughnut chart
+│   │   │   ├── TransactionsTable.js     # Data table with filters
+│   │   │   ├── TransactionModal.js      # Add/Edit modal
+│   │   │   ├── BulkUploadModal.js       # CSV import modal
+│   │   │   ├── InsightsPanel.js         # Insights sidebar
+│   │   │   ├── SpendingAlertsBanner.js  # Alert notification banner
+│   │   │   └── SpendingAlertsSettings.js # Alert configuration modal
+│   │   ├── context/
+│   │   │   └── AppContext.js            # Global state management
+│   │   ├── utils/
+│   │   │   ├── mockData.js              # Mock transaction generator
+│   │   │   ├── calculations.js          # Financial calculations
+│   │   │   ├── export.js                # CSV/JSON export
+│   │   │   ├── import.js                # CSV parsing & validation
+│   │   │   └── alerts.js                # Spending alert calculations
+│   │   ├── App.js                       # Main app component
+│   │   ├── App.css                      # App styles
+│   │   └── index.css                    # Global styles & Tailwind
+│   ├── package.json
+│   └── tailwind.config.js
+├── README.md
+
+```
+🎮 Available Scripts
+
+### Development
+```bash
+yarn start          # Start development server (http://localhost:3000)
+yarn build          # Build for production
+yarn test           # Run tests
+```
+
+### Using npm
+```bash
+npm start           # Start development server
+npm run build       # Build for production
+npm test            # Run tests
+```
+
+ 🎯 Usage Guide
+
+### First Time Setup
+1. Open the app → 120 mock transactions are automatically generated
+2. Data is saved to browser's localStorage
+3. Start exploring!
+
+### Switch Roles
+1. Click user avatar in top right
+2. Select "Admin" or "Viewer"
+3. Admin: Full access | Viewer: Read-only
+
+### Add Transaction (Admin only)
+1. Click "Add Transaction" button
+2. Fill in the form:
+   - Date, Type (Income/Expense)
+   - Category, Description, Amount
+   - Optional: Notes, Receipt attachment
+3. Click "Add Transaction"
+
+### Bulk Upload (Admin only)
+1. Click "Bulk Upload" button
+2. Choose format: Standard CSV or Bank Statement
+3. Upload CSV file (or download template first)
+4. Preview transactions
+5. Click "Import Transactions"
+
+CSV Format:
+```csv
+Date,Description,Category,Type,Amount,Notes
+2024-01-01,Grocery Shopping,Food & Dining,expense,125.50,Weekly groceries
+2024-01-02,Monthly Salary,Salary,income,5000.00,Paycheck
+```
+
+Bank Statement Format:
+```csv
+Date,Description,Debit,Credit,Balance
+01/15/2024,Grocery Store,125.50,,5874.50
+01/16/2024,Salary Deposit,,5000.00,10874.50
+```
+
+### Configure Spending Alerts
+1. Click bell icon in header
+2. Enable alerts toggle
+3. Set spending limit (e.g., $1000)
+4. Choose period (Daily/Weekly/Monthly)
+5. Click "Save Settings"
+6. Alert banner appears when threshold is met
+
+### Filter Transactions
+- Search: Type in search box (searches description, category, serial #)
+- Category: Select from dropdown
+- Type: Choose Income or Expense
+- Date Range: Pick start and end dates
+- Sort: By date or amount
+- Clear All: Click "Clear Filters" button
+
+### View Transaction Details
+- Hover over any amount in the table
+- See enhanced tooltip with:
+  - Serial number & transaction name
+  - Full date & category
+  - Amount (large display)
+  - Notes (if added)
+  - Receipt status (if attached)
+
+### Export Data
+1. Click "Export" in header
+2. Choose "Export as CSV" or "Export as JSON"
+3. File downloads automatically (includes filtered data)
+
+### Toggle Theme
+Click sun/moon icon in header to switch between light and dark modes
+
+🔧 Data Storage Explained
+
+### Current Setup: STATIC (Client-Side)
+- Storage: Browser's localStorage
+- Location: `localStorage.getItem('transactions')`
+- Pros: 
+  - ✅ No server needed
+  - ✅ Works offline
+  - ✅ Instant performance
+- Cons: 
+  - ❌ Data only on your device
+  - ❌ Lost if browser cache cleared
+  - ❌ No sync across devices
+
+### Mock Data Generation
+How it works:
+1. First visit: No data in localStorage
+2. `generateMockTransactions(120)` runs
+3. Creates 120 fake transactions with:
+   - Random dates (last 180 days)
+   - Random categories & descriptions
+   - Random amounts ($10-$510 for expenses, $500-$4500 for income)
+   - Serial numbers (#1000+)
+4. Saves to localStorage
+5. Next visit: Loads from localStorage
+
+Want fresh data?
+```javascript
+// In browser console (F12)
+localStorage.clear()
+location.reload()
+```
+
+### To Make DYNAMIC (Real Database)
+Would need:
+- Backend API (FastAPI  in `/app/backend/`)
+- MongoDB/PostgreSQL database
+- API endpoints: `POST /api/transactions`, `GET /api/transactions`
+- Data would sync across devices
+
+🎨 Customization
+
+### Change Color Scheme
+Edit `/frontend/src/index.css`:
+
+```css
+:root {
+    --background: 248 250 252;
+    --primary: 79 70 229;
+    /* Add your custom colors */
+}
+
+.dark {
+    --background: 2 6 23;
+    --primary: 99 102 241;
+}
+```
+
+### Modify Mock Data
+Edit `/frontend/src/utils/mockData.js`:
+- Change transaction count: `generateMockTransactions(200)`
+- Add categories: Modify `categories` array
+- Change amount ranges: Adjust random calculation
+- Customize descriptions: Edit `descriptions` object
+
+### Change Spending Alert Defaults
+Edit `/frontend/src/context/AppContext.js`:
+```javascript
+const [spendingAlert, setSpendingAlert] = useState({
+    enabled: true,
+    threshold: 2000,  // Change default threshold
+    period: 'weekly', // Change default period
+});
+```
+
+🔑 Key Components
+
+### AppContext (`context/AppContext.js`)
+Global state management for:
+- Transactions (CRUD operations)
+- User role (Admin/Viewer)
+- Theme (Light/Dark)
+- Filters (Search, Category, Type, Sort, Date Range)
+- Spending Alerts configuration
+
+### TransactionsTable (`components/TransactionsTable.js`)
+Main table display featuring:
+- Serial number column (#1000+)
+- Search, filters, date range picker
+- Clear filters button
+- Bulk upload button
+- Enhanced tooltips on amount hover
+- Edit/Delete actions (Admin only)
+
+### Transaction Modals
+- TransactionModal: Add/Edit with notes & receipt upload
+- BulkUploadModal: CSV import with validation & preview
+
+### Spending Alerts
+- SpendingAlertsBanner: Visual notification banner
+- SpendingAlertsSettings: Configuration modal
+- alerts.js: Calculation logic for period-based spending
+
+### Charts
+- BalanceTrendChart: Line chart showing balance over time
+- SpendingBreakdown: Doughnut chart for expense categories
+
+🐛 Troubleshooting
+
+### Port 3000 already in use
+```bash
+# Kill process on port 3000
+npx kill-port 3000
+
+# Or use a different port
+PORT=3001 yarn start
+```
+
+### Module not found errors
+```bash
+# Clear cache and reinstall
+rm -rf node_modules package-lock.json yarn.lock
+yarn install
+```
+
+### Mock data not generating
+```bash
+# Clear localStorage and refresh
+# Open browser console (F12)
+localStorage.clear()
+location.reload()
+```
+
+### Tooltips not showing
+- Make sure you're hovering over the *amount* column
+- Wait 200ms for tooltip delay
+- Check that Tooltip component is imported
+
+### Bulk upload validation errors
+- Ensure CSV has correct headers
+- Check date format (YYYY-MM-DD or MM/DD/YYYY)
+- Verify amount is a number
+- Category must match existing categories
+
+📱 Browser Support
+
+- Chrome (latest) ✅
+- Firefox (latest) ✅
+- Safari (latest) ✅
+- Edge (latest) ✅
+
+🎯 Feature Checklist
+
+- [x] Dashboard with summary cards
+- [x] Balance trend chart
+- [x] Spending breakdown chart
+- [x] Transaction table with CRUD
+- [x] Advanced filtering & search
+- [x] Date range picker
+- [x] Clear all filters
+- [x] Role-based access (Admin/Viewer)
+- [x] Dark/Light theme toggle
+- [x] CSV/JSON export
+- [x] Bulk CSV import
+- [x] Bank statement import
+- [x] Transaction serial numbers
+- [x] Enhanced tooltips with details
+- [x] Transaction notes
+- [x] Receipt attachments
+- [x] Spending alerts system
+- [x] LocalStorage persistence
+- [x] Responsive design
+- [x] Glassmorphism UI
+- [x] Entrance animations
+- [x] Hover effects
+
+ 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+👨‍💻 Author
+
+Built with ❤️ using React and Glassmorphism design principles
+
+🙏 Acknowledgments
+
+- [Shadcn UI](https://ui.shadcn.com/) for beautiful components
+- [Chart.js](https://www.chartjs.org/) for data visualization
+- [Phosphor Icons](https://phosphoricons.com/) for icons
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [date-fns](https://date-fns.org/) for date manipulation
+
+
+ Enjoy using FinSight! 💰✨
