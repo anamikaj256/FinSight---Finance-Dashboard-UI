@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { ArrowUp, ArrowDown, TrendUp, TrendDown } from '@phosphor-icons/react';
+import { ArrowUp, ArrowDown, TrendDown } from '@phosphor-icons/react';
 import { useApp } from '../context/AppContext';
 import { getMonthlyComparison, getHighestSpendingCategory } from '../utils/calculations';
 
